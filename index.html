@@ -2,38 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape Room: Membrana Plasmática</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <title>Escape Room - Membrana Plasmática</title>
 </head>
 <body>
-  <header>
-    <h1>🔬 Escape Room: Membrana Plasmática</h1>
-    <p>Ayuda a Camila resolviendo desafíos celulares para lograr una transfusión compatible.</p>
-  </header>
+  <div id="menu">
+    <button onclick="mostrarSala('sala1')" id="btn-sala1">🧪 Sala 1</button>
+    <button onclick="mostrarSala('sala2')" id="btn-sala2" disabled>🧬 Sala 2</button>
+    <button onclick="mostrarSala('sala3')" id="btn-sala3" disabled>⚡ Sala 3</button>
+    <button onclick="mostrarSala('sala4')" id="btn-sala4" disabled>🧫 Sala 4</button>
+    <button onclick="mostrarSala('sala5')" id="btn-sala5" disabled>🧠 Sala 5</button>
+  </div>
 
-  <main>
-    <section id="menu">
-      <h2>Salas del laboratorio</h2>
-      <ul>
-        <li><button onclick="mostrarSala('sala1')">🧬 Sala 1: Membrana</button></li>
-        <li><button onclick="mostrarSala('sala2')">🧪 Sala 2: Componentes</button></li>
-        <li><button onclick="mostrarSala('sala3')">⚡ Sala 3: Transporte</button></li>
-        <li><button onclick="mostrarSala('sala4')">🧫 Sala 4: ¿Camila?</button></li>
-        <li><button onclick="mostrarSala('sala5')">❓ Sala 5: Fase final...</button></li>
-      </ul>
-    </section>
+  <div id="contenido">
+    <p>Haz clic en una sala para comenzar el escape biomédico...</p>
+  </div>
 
-    <section id="contenido">
-      <p>Haz clic en una sala para comenzar tu misión celular.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>🧠 Creado por Juliana Q. | Proyecto académico de biología celular | 2025</p>
-  </footer>
-
+  <!-- Aquí se enlaza tu script externo -->
   <script src="script.js"></script>
 </body>
 </html>
