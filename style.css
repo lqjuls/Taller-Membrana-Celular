@@ -1,52 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Orbitron', sans-serif;
-  background-image: url('https://img.freepik.com/vector-premium/fondo-cientifico-diseno-dibujado-mano-equipo-laboratorio-quimico-escritorio_23-2148661334.jpg');
-  background-size: cover;
-  color: white;
+  background-color: #0a0f1c;
+  color: #e0f7fa;
   text-align: center;
-  padding: 20px;
 }
 
-h1, h2 {
-  text-shadow: 2px 2px 5px #000;
+#pantalla-inicio, #laboratorio {
+  padding: 40px;
 }
 
 button {
-  background-color: #3e8e41;
-  border: none;
-  padding: 15px;
+  font-size: 18px;
+  padding: 12px 24px;
   margin: 10px;
-  color: white;
-  font-size: 1.1em;
-  border-radius: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #18ffff;
+  color: #000;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 button:disabled {
-  background-color: gray;
+  background-color: #888;
+  cursor: not-allowed;
 }
 
-#salas {
-  margin: 20px 0;
+button:hover:not(:disabled) {
+  background-color: #00e5ff;
 }
 
 #contenido {
-  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 30px;
   padding: 20px;
-  border-radius: 10px;
-  min-height: 200px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-input {
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 5px;
-  border: none;
-}
-
-#pantalla-inicio {
-  margin-top: 100px;
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
 }
