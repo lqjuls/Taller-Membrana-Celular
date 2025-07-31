@@ -1,11 +1,3 @@
-<body>
-<div id="menu">
-  <button onclick="mostrarSala('sala1')" id="btn-sala1">🧪 Sala 1</button>
-  <button onclick="mostrarSala('sala2')" id="btn-sala2" disabled>🧬 Sala 2</button>
-  <button onclick="mostrarSala('sala3')" id="btn-sala3" disabled>⚡ Sala 3</button>
-  <button onclick="mostrarSala('sala4')" id="btn-sala4" disabled>🧫 Sala 4</button>
-  <button onclick="mostrarSala('sala5')" id="btn-sala5" disabled>🧠 Sala 5</button>
-</div>
 function mostrarSala(sala) {
   const contenido = document.getElementById("contenido");
 
@@ -27,7 +19,7 @@ function mostrarSala(sala) {
     `;
   }
 
-  // Puedes ir agregando más salas aquí igual que las anteriores
+  // Aquí puedes seguir agregando las demás salas
 }
 
 function verificarRespuesta1() {
@@ -41,4 +33,3 @@ function verificarRespuesta1() {
     feedback.innerHTML = "❌ Respuesta incorrecta. Pista: también se encuentra en las hormonas esteroides.";
   }
 }
-<script src="script.js"></script>
