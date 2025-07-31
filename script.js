@@ -6,27 +6,36 @@ function iniciarJuego() {
 
 function mostrarSala(sala) {
   const contenido = document.getElementById("contenido");
+  const puerta = document.getElementById("puerta");
 
-  if (sala === "sala1") {
-    contenido.innerHTML = `
-      <h2>🧪 Sala 1: Mosaico Fluido</h2>
-      <p>La membrana plasmática es como un mosaico dinámico de lípidos y proteínas.</p>
-      <img src="https://i.imgur.com/R7UtZ3N.png" alt="Mosaico Fluido">
-      <p><strong>Pregunta:</strong> ¿Qué componente le da fluidez a la membrana?</p>
-      <input type="text" id="respuesta1" placeholder="Escribe tu respuesta aquí" />
-      <button onclick="verificarRespuesta1()">Enviar</button>
-      <p id="feedback1"></p>
-    `;
-  }
+  // Mostrar animación de puerta
+  puerta.classList.add("mostrar");
 
-  if (sala === "sala2") {
-    contenido.innerHTML = `
-      <h2>🧬 Sala 2: Componentes de la membrana</h2>
-      <p>Aquí aprenderás sobre los fosfolípidos, proteínas y carbohidratos de membrana.</p>
-      <img src="https://i.imgur.com/VzOZsLq.png" alt="Componentes de la membrana">
-      <p><em>¡Buen trabajo al desbloquear esta sala!</em></p>
-    `;
-  }
+  setTimeout(() => {
+    puerta.classList.remove("mostrar");
+
+    if (sala === "sala1") {
+      contenido.innerHTML = `
+        <h2>🧪 Sala 1: Mosaico Fluido</h2>
+        <p>La membrana plasmática es como un mosaico dinámico de lípidos y proteínas.</p>
+        <img src="https://i.imgur.com/R7UtZ3N.png" alt="Mosaico Fluido">
+        <p><strong>Pregunta:</strong> ¿Qué componente le da fluidez a la membrana?</p>
+        <input type="text" id="respuesta1" placeholder="Escribe tu respuesta aquí" />
+        <button onclick="verificarRespuesta1()">Enviar</button>
+        <p id="feedback1"></p>
+      `;
+    }
+
+    if (sala === "sala2") {
+      contenido.innerHTML = `
+        <h2>🧬 Sala 2: Componentes de la membrana</h2>
+        <p>Aquí aprenderás sobre los fosfolípidos, proteínas y carbohidratos de membrana.</p>
+        <img src="https://i.imgur.com/VzOZsLq.png" alt="Componentes de la membrana">
+        <p><em>¡Buen trabajo al desbloquear esta sala!</em></p>
+      `;
+    }
+
+  }, 1000); // Esto cierra el setTimeout
 }
 
 function verificarRespuesta1() {
