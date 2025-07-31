@@ -1,3 +1,4 @@
+<body>
 <div id="menu">
   <button onclick="mostrarSala('sala1')" id="btn-sala1">🧪 Sala 1</button>
   <button onclick="mostrarSala('sala2')" id="btn-sala2" disabled>🧬 Sala 2</button>
