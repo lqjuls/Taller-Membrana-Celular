@@ -1,13 +1,7 @@
 function iniciarJuego() {
-  document.getElementById('pantalla-inicio').style.display = 'none';
-  document.getElementById('laboratorio').style.display = 'block';
-  reproducirMusica();
-}
-
-function reproducirMusica() {
-  const musica = document.getElementById('musica-fondo');
-  musica.volume = 0.2;
-  musica.play();
+  document.getElementById("pantalla-inicio").style.display = "none";
+  document.getElementById("laboratorio").style.display = "block";
+  document.getElementById("musica-fondo").play();
 }
 
 function mostrarSala(sala) {
@@ -15,45 +9,35 @@ function mostrarSala(sala) {
 
   if (sala === "sala1") {
     contenido.innerHTML = `
-      <h2>🧪 Sala 1: Modelo de Mosaico Fluido</h2>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Fluid_mosaic_membrane.svg" width="300"/>
-      <p>¿Qué componente da fluidez a la membrana?</p>
-      <input type="text" id="respuesta1" placeholder="Tu respuesta">
-      <button onclick="verificarRespuesta1()">Verificar</button>
+      <h2>🧪 Sala 1: Mosaico Fluido</h2>
+      <p>La membrana plasmática es como un mosaico dinámico de lípidos y proteínas.</p>
+      <img src="https://i.imgur.com/R7UtZ3N.png" alt="Mosaico Fluido">
+      <p><strong>Pregunta:</strong> ¿Qué componente le da fluidez a la membrana?</p>
+      <input type="text" id="respuesta1" placeholder="Escribe tu respuesta aquí" />
+      <button onclick="verificarRespuesta1()">Enviar</button>
       <p id="feedback1"></p>
     `;
   }
 
   if (sala === "sala2") {
     contenido.innerHTML = `
-      <h2>🧬 Sala 2: Componentes</h2>
-      <img src="https://i.imgur.com/L2Qlx5H.png" width="300"/>
-      <p>Menciona una proteína que atraviesa completamente la membrana:</p>
-      <input type="text" id="respuesta2" placeholder="Tu respuesta">
-      <button onclick="verificarRespuesta2()">Verificar</button>
-      <p id="feedback2"></p>
+      <h2>🧬 Sala 2: Componentes de la membrana</h2>
+      <p>Aquí aprenderás sobre los fosfolípidos, proteínas y carbohidratos de membrana.</p>
+      <img src="https://i.imgur.com/VzOZsLq.png" alt="Componentes de la membrana">
+      <p><em>¡Buen trabajo al desbloquear esta sala!</em></p>
     `;
   }
 }
 
 function verificarRespuesta1() {
-  const r = document.getElementById('respuesta1').value.toLowerCase().trim();
-  const f = document.getElementById('feedback1');
-  if (r === 'colesterol') {
-    f.innerHTML = '✅ ¡Correcto! Avanzas a la siguiente sala.';
-    document.getElementById('btn-sala2').disabled = false;
-  } else {
-    f.innerHTML = '❌ Incorrecto. Pista: también está en las hormonas esteroides.';
-  }
-}
+  const respuesta = document.getElementById("respuesta1").value.trim().toLowerCase();
+  const feedback = document.getElementById("feedback1");
 
-function verificarRespuesta2() {
-  const r = document.getElementById('respuesta2').value.toLowerCase().trim();
-  const f = document.getElementById('feedback2');
-  if (r.includes('integral') || r.includes('transmembrana')) {
-    f.innerHTML = '✅ ¡Correcto! Has desbloqueado la Sala 3.';
-    document.getElementById('btn-sala3').disabled = false;
+  if (respuesta === "colesterol") {
+    feedback.innerHTML = "✅ ¡Correcto! Has desbloqueado la Sala 2.";
+    document.getElementById("btn-sala2").disabled = false;
+    new Audio("https://cdn.pixabay.com/download/audio/2023/03/02/audio_623a5041a1.mp3?filename=correct-answer-143023.mp3").play();
   } else {
-    f.innerHTML = '❌ Intenta de nuevo.';
+    feedback.innerHTML = "❌ Respuesta incorrecta. Pista: también está presente en las hormonas esteroides.";
   }
 }
