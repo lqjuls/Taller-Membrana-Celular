@@ -1,58 +1,43 @@
-function mostrarSala(nombreSala) {
-  const contenido = document.getElementById('contenido');
+<div id="menu">
+  <button onclick="mostrarSala('sala1')" id="btn-sala1">🧪 Sala 1</button>
+  <button onclick="mostrarSala('sala2')" id="btn-sala2" disabled>🧬 Sala 2</button>
+  <button onclick="mostrarSala('sala3')" id="btn-sala3" disabled>⚡ Sala 3</button>
+  <button onclick="mostrarSala('sala4')" id="btn-sala4" disabled>🧫 Sala 4</button>
+  <button onclick="mostrarSala('sala5')" id="btn-sala5" disabled>🧠 Sala 5</button>
+</div>
+function mostrarSala(sala) {
+  const contenido = document.getElementById("contenido");
 
-  if (nombreSala === 'sala1') {
+  if (sala === "sala1") {
     contenido.innerHTML = `
-      <h2>🧬 Modelo de Mosaico Fluido</h2>
-      <p>La membrana plasmática se describe como un mosaico fluido porque...</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Fluid_mosaic_membrane.svg/1200px-Fluid_mosaic_membrane.svg.png" alt="Modelo de mosaico fluido" style="max-width:100%; border-radius:10px; margin-top:10px;">
+      <h2>🧪 Sala 1: Modelo de Mosaico Fluido</h2>
+      <p>La membrana plasmática se comporta como un mosaico fluido, compuesto por una bicapa de fosfolípidos en la que se insertan proteínas...</p>
+      <p><strong>Pregunta:</strong> ¿Qué componente le da fluidez a la membrana?</p>
+      <input type="text" id="respuesta1" placeholder="Tu respuesta aquí">
+      <button onclick="verificarRespuesta1()">Enviar</button>
+      <p id="feedback1"></p>
     `;
   }
 
-  else if (nombreSala === 'sala2') {
+  if (sala === "sala2") {
     contenido.innerHTML = `
-      <h2>🧪 Componentes de la Membrana</h2>
-      <ul>
-        <li><strong>Fosfolípidos:</strong> forman la bicapa.</li>
-        <li><strong>Proteínas integrales:</strong> cruzan la membrana.</li>
-        <li><strong>Proteínas periféricas:</strong> asociadas a un solo lado.</li>
-        <li><strong>Glucoproteínas y glucolípidos:</strong> reconocimiento celular.</li>
-      </ul>
-      <img src="https://i.pinimg.com/originals/fc/f6/d1/fcf6d127f8d768f30875c781697d3042.jpg" alt="Componentes de la membrana" style="max-width:100%; border-radius:10px; margin-top:10px;">
+      <h2>🧬 Sala 2: Componentes de la Membrana</h2>
+      <p>En esta sala aprenderás sobre los fosfolípidos, proteínas, glucolípidos y glucoproteínas. Cada uno cumple funciones vitales en la membrana...</p>
     `;
   }
 
-  else if (nombreSala === 'sala3') {
-    contenido.innerHTML = `
-      <h2>⚡ Transporte a través de la Membrana</h2>
-      <ul>
-        <li><strong>Difusión simple:</strong> sustancias pequeñas y lipofílicas.</li>
-        <li><strong>Difusión facilitada:</strong> a través de canales o proteínas.</li>
-        <li><strong>Transporte activo:</strong> usa ATP (como la bomba Na⁺/K⁺).</li>
-        <li><strong>Endocitosis y exocitosis:</strong> transporte masivo.</li>
-      </ul>
-      <img src="https://www.lifeder.com/wp-content/uploads/2019/05/transporte-activo.jpg" alt="Transporte celular" style="max-width:100%; border-radius:10px; margin-top:10px;">
-    `;
-  }
+  // Puedes ir agregando más salas aquí igual que las anteriores
+}
 
-  else if (nombreSala === 'sala4') {
-    contenido.innerHTML = `
-      <h2>🧫 Caso clínico: Camila</h2>
-      <p>Camila, una niña de 6 años, presenta fatiga muscular crónica, bajo crecimiento y disfunción neuromuscular. Exámenes revelan alteración en la bomba Na⁺/K⁺, afectando el equilibrio osmótico y la conducción nerviosa.</p>
-      <p><strong>¿Qué trastorno celular podría explicar sus síntomas?</strong></p>
-      <img src="https://cdn.pixabay.com/photo/2017/02/08/01/33/child-2048895_1280.jpg" alt="Camila paciente ficticia" style="max-width:100%; border-radius:10px; margin-top:10px;">
-    `;
-  }
+function verificarRespuesta1() {
+  const respuesta = document.getElementById("respuesta1").value.trim().toLowerCase();
+  const feedback = document.getElementById("feedback1");
 
-  else if (nombreSala === 'sala5') {
-    contenido.innerHTML = `
-      <h2>❓ Preguntas de razonamiento</h2>
-      <ol>
-        <li>Si una proteína integral deja de funcionar, ¿qué proceso se vería más afectado?</li>
-        <li>¿Por qué una célula no puede sobrevivir sin la bomba Na⁺/K⁺?</li>
-        <li>¿Cómo se relacionan los síntomas de Camila con el transporte activo?</li>
-      </ol>
-      <p><em>¡Escríbelas en tu cuaderno, resuélvelas y gana la llave final del escape!</em></p>
-    `;
+  if (respuesta === "colesterol") {
+    feedback.innerHTML = "✅ ¡Correcto! Has desbloqueado la Sala 2.";
+    document.getElementById("btn-sala2").disabled = false;
+  } else {
+    feedback.innerHTML = "❌ Respuesta incorrecta. Pista: también se encuentra en las hormonas esteroides.";
   }
 }
+<script src="script.js"></script>
