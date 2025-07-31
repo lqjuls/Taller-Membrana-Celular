@@ -5,30 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room: Membrana Plasmática</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>🔬 Escape Room: Membrana Plasmática</h1>
-    <p>¡Ayuda a Camila resolviendo los desafíos celulares para desbloquear la transfusión compatible!</p>
+    <p>Ayuda a Camila resolviendo desafíos celulares para lograr una transfusión compatible.</p>
   </header>
 
   <main>
     <section id="menu">
       <h2>Salas del laboratorio</h2>
       <ul>
-        <li><button onclick="mostrarSala('sala1')">🧬 Sala 1: Modelo de Mosaico Fluido</button></li>
-        <li><button onclick="mostrarSala('sala2')">🧪 Sala 2: Componentes de la Membrana</button></li>
-        <li><button onclick="mostrarSala('sala3')">⚡ Sala 3: Transporte a través de la Membrana</button></li>
-        <li><button onclick="mostrarSala('sala4')">🧫 Sala 4: Caso Clínico - Camila</button></li>
-        <li><button onclick="mostrarSala('sala5')">❓ Sala 5: Preguntas de razonamiento</button></li>
+        <li><button onclick="mostrarSala('sala1')">🧬 Sala 1: Membrana</button></li>
+        <li><button onclick="mostrarSala('sala2')">🧪 Sala 2: Componentes</button></li>
+        <li><button onclick="mostrarSala('sala3')">⚡ Sala 3: Transporte</button></li>
+        <li><button onclick="mostrarSala('sala4')">🧫 Sala 4: ¿Camila?</button></li>
+        <li><button onclick="mostrarSala('sala5')">❓ Sala 5: Fase final...</button></li>
       </ul>
     </section>
 
-    <section id="contenido"></section>
+    <section id="contenido">
+      <p>Haz clic en una sala para comenzar tu misión celular.</p>
+    </section>
   </main>
 
   <footer>
-    <p>Creado por Juliana Q. | Proyecto académico | 2025</p>
+    <p>🧠 Creado por Juliana Q. | Proyecto académico de biología celular | 2025</p>
   </footer>
 
   <script src="script.js"></script>
